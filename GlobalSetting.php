@@ -17,7 +17,7 @@ $_E = [];
 $_LG = [];
 
 $_E['ROOT'] = __DIR__;
-$_E['SITEPORT'] = '80';
+$_E['SITEPORT'] = '9499';
 $_E['SITEDIR'] = '/';
 $_E['DATADIR'] = $_E['ROOT'].'/data/';
 

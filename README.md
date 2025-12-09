@@ -29,5 +29,5 @@ docker compose up --watch
 
 Customization
 -------------
-- If you want to change the port, you can modify the `docker-compose.yml` file.
+- If you want to change the port, you should modify the `docker-compose.yml` and `$_E['SITEPORT']` in `GlobalSetting.php` file. Make sure the port number are consistent.
 - If you want to change database settings, you should modify `config/config.php` and `docker-compose.yml` file. Make sure the settings are consistent.
