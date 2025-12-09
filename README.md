@@ -4,12 +4,7 @@ SKY Online Judge (Developing)
 
 Required
 -------------
-1. PHP 7.2.0 +<br>
-   Required modules:
-   1. pdo
-   2. pdo-mysql
-   3. gmp
-2. MySQL or MariaDB
+1. Docker & Docker-Compose
 
 Install
 -------------
@@ -17,7 +12,22 @@ Install
 2. Copy `config/config.example.php` to `config/config.php`
 3. Fill out your MySQL setting in config.php
 4. Copy `LocalSetting.example.php` to `LocalSetting.php` then set its starting directory at `$_E['SITEDIR']`
-5. Install [composer](https://getcomposer.org/) or put composer.phar to site root
-6. use `php composer.phar install` or `composer install` to install php library
-7. use `./vendor/bin/phinx m` to set up your database.
-8. start your SKY Online Judge ~
+5. Run `docker compose up --watch` to start the system
+6. Open your web browser and go to `http://localhost:9499` to access the SKY Online Judge system.
+
+```bash
+# This uses default setting.
+git clone --recurse-submodules git@github.com:yushiuan9499/SkyOnlinejudge.git
+cd SkyOnlinejudge
+git checkout support-docker
+
+cp config/config.example.php config/config.php
+cp LocalSetting.example.php LocalSetting.php
+
+docker compose up --watch
+```
+
+Customization
+-------------
+- If you want to change the port, you can modify the `docker-compose.yml` file.
+- If you want to change database settings, you should modify `config/config.php` and `docker-compose.yml` file. Make sure the settings are consistent.
