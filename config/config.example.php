@@ -2,7 +2,7 @@
 
 $_config = [];
 // ----------------------------  CONFIG DB  ----------------------------- //
-$_config['db']['query_string']  = 'mysql:host=127.0.0.1';
+$_config['db']['query_string']  = 'mysql:host=db';
 $_config['db']['dbname'] = 'sky';
 $_config['db']['dbuser']        = 'skyuser';
 $_config['db']['dbpassword']    = 'skypassword';

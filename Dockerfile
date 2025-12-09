@@ -22,17 +22,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Install PHP dependencies
 RUN composer install
 
-# Set up the database
-RUN service mariadb start && mysql -e "CREATE DATABASE sky;" \
-    && mysql -e "CREATE USER 'skyuser'@'localhost' IDENTIFIED BY 'skypassword';" \
-    && mysql -e "GRANT ALL PRIVILEGES ON sky.* TO 'skyuser'@'localhost';" \
-    && mysql -e "FLUSH PRIVILEGES;"
-
-# Run database migrations
-RUN service mariadb start && ./vendor/bin/phinx m
-
 # Expose port 80
 EXPOSE 80
 
 # Start Apache
-CMD ["service mariadb start && apache2-foreground"]
+CMD /bin/bash -c "./vendor/bin/phinx m && apache2-foreground"
