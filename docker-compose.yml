@@ -3,20 +3,14 @@ version: '3'
 services:
   web:
     build: .
-    develop:
-      watch:
-        - path: ./config # For testing purposes, sync the config directory
-          action: sync
-          target: /var/www/html/config
-        - path: ./index.php
-          action: sync
-          target: /var/www/html/index.php
     ports:
       - "9499:80"
     depends_on:
       - db
   db:
     image: mariadb:latest
+    volumes:
+      - /srv/skyoj-dev/db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: sky

@@ -24,7 +24,7 @@ git checkout support-docker
 cp config/config.example.php config/config.php
 cp LocalSetting.example.php LocalSetting.php
 
-docker compose up --watch
+docker compose up -d
 ```
 
 Customization
