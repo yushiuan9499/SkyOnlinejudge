@@ -25,5 +25,4 @@ RUN composer install
 # Expose port 80
 EXPOSE 80
 
-# Start Apache
-CMD /bin/bash -c "./vendor/bin/phinx m && apache2-foreground"
+ENTRYPOINT ["./tools/entrypoint.sh"]
