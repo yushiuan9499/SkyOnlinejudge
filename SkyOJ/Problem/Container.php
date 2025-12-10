@@ -16,7 +16,7 @@ use \SkyOJ\Score;
 
 class Container extends \SkyOJ\Core\CommonObject implements \SkyOJ\Core\Permission\Permissible
 {
-    protected static $table = 'problem'; 
+    protected static $table = 'problem';
     protected static $prime_key = 'pid';
     private $m_problem_data_manager;
     private $json;
@@ -39,6 +39,8 @@ class Container extends \SkyOJ\Core\CommonObject implements \SkyOJ\Core\Permissi
             'content_type' => ProblemDescriptionEnum::MarkDown,
             'memory_limit' => 1048576, //1 Mb
             'runtime_limit' => 1000,   //1 Second
+            'score_type' => !\SkyOJ\Score\ScoreModeEnum::None,
+            'score_data' => '',
         ];
         return self::insertInto($default);
     }
