@@ -19,7 +19,6 @@ Install
 # This uses default setting.
 git clone --recurse-submodules git@github.com:yushiuan9499/SkyOnlinejudge.git
 cd SkyOnlinejudge
-git checkout support-docker
 
 cp config/config.example.php config/config.php
 cp LocalSetting.example.php LocalSetting.php
