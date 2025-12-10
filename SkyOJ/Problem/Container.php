@@ -39,7 +39,7 @@ class Container extends \SkyOJ\Core\CommonObject implements \SkyOJ\Core\Permissi
             'content_type' => ProblemDescriptionEnum::MarkDown,
             'memory_limit' => 1048576, //1 Mb
             'runtime_limit' => 1000,   //1 Second
-            'score_type' => !\SkyOJ\Score\ScoreModeEnum::None,
+            'score_type' => \SkyOJ\Score\ScoreModeEnum::None,
             'score_data' => '',
         ];
         return self::insertInto($default);
