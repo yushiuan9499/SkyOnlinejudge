@@ -4,6 +4,8 @@ SHELL ["/bin/bash", "-c"]
 WORKDIR /var/www/html
 COPY . /var/www/html
 
+RUN rm -rf /var/www/html/.git
+
 # Install required PHP extensions and system dependencies
 RUN apt-get update && apt-get install -y \
     libgmp-dev \
