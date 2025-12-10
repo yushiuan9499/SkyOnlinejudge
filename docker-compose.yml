@@ -7,6 +7,8 @@ services:
       - "9499:80"
     depends_on:
       - db
+    volumes:
+      - skyoj-dev-data:/var/www/html/data
   db:
     image: mariadb:latest
     volumes:
@@ -16,3 +18,6 @@ services:
       MYSQL_DATABASE: sky
       MYSQL_USER: skyuser
       MYSQL_PASSWORD: skypassword
+
+volumes:
+  skyoj-dev-data:
